@@ -144,7 +144,7 @@
           <div class="my-3">
             <div class="loading">Loading</div>
             <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
+            <div class="sent-message">Your message has been sent. Thank you! We will attempt to get back within 3 working days for your enquiry</div>
           </div>
           <div class="text-center"><button type="submit">Send Message</button></div>
         </form>
