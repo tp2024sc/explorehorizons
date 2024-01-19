@@ -115,6 +115,7 @@
     <form action="LoginServlet" method="post">
 Enter email: <input type="text" name="email" size="20"><br/>
 Enter password: <input type="password" name="password" size="20"><br/>
+Emulate some captcha use here<br/>
 <!-- Implement submit button with type = submit to perform the request when clicked -->
 <button type="submit">Login</button>
 </form>
