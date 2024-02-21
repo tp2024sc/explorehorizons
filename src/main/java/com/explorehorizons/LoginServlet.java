@@ -118,7 +118,7 @@ public class LoginServlet extends HttpServlet {
 				
 			}
 			*/
-			System.out.println ( "countRows = " ) ; 
+			System.out.println ( " Exception occured error.getMessage= " + sqle.getMessage() ) ; 
 			
 		}
 		System.out.println ( "countRows = " + countRows) ; 

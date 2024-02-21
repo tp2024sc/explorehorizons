@@ -25,7 +25,7 @@
 		<junit-jupiter.artifactId>junit-jupiter</junit-jupiter.artifactId>
 		<junit-jupiter.version>5.7.0</junit-jupiter.version>
 		
-		<sonar.exclusions>src/main/java/*Servlet*.java</sonar.exclusions>
+		<sonar.exclusions>src/main/java/*/*/*Servlet*.java</sonar.exclusions>
 	</properties>
 
 

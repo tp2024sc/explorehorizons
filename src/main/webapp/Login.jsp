@@ -112,7 +112,7 @@
 
     
     
-    <form action="LoginServlet" method="post">
+    <form action="LoginServlet" method="post" name="LoginForm">
 Enter email: <input type="text" name="email" size="20"><br/>
 Enter password: <input type="password" name="password" size="20"><br/>
 Emulate some captcha use here<br/>
