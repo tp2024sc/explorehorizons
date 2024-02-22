@@ -11,22 +11,22 @@ pipeline{
                 bat "mvn clean"
             }
         }
-        stage("sonar"){
-            steps{
-                echo "Start sonar"
-                bat "mvn sonar:sonar"
-            }
-        }
         stage("test"){
             steps{
                 echo "Start Test"
                 bat "mvn test"
             }
         }
+        stage("sonar"){
+            steps{
+                echo "Start sonar"
+                bat "mvn sonar:sonar"
+            }
+        }
         stage("install"){
             steps{
                 echo "Start build"
-                bat "mvn install"
+                bat "mvn install -DskipTests"
             }
         }
     }
