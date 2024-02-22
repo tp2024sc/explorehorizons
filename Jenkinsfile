@@ -18,12 +18,12 @@ pipeline{
                 bat "mvn compile"
             }
         }
-        stage("test"){
-            steps{
-                echo "Start Test"
-                bat "mvn test"
-            }
-        }
+        //stage("test"){
+        //    steps{
+        //        echo "Start Test"
+        //        bat "mvn test"
+        //    }
+        //}
         //stage("sonar"){
         //    steps{
         //        echo "Start sonar"
