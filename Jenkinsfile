@@ -20,9 +20,10 @@ pipeline{
         stage("sonar"){
             steps{
                 echo "Start sonar"
-                bat "mvn sonar:sonar"
+                bat "mvn sonar:sonar -Dsonar.projectKey=ExploreHorizons.jenkinsPipeline -Dsonar.projectName=ExploreHorizons.jenkinsPipeline -Dsonar.sources=src/main -Dsonar.language=java -Dsonar.test=src/test -Dsonar.junit.reportsPath=target/surefire-reports -Dsonar.surefire.reportsPath=target/surefire-reports -Dsonar.jacoco.reportPath=target/jacoco.exec -Dsonar.java.binaries=target/classes -Dsonar.java.coveragePlugin=jacoco"
             }
         }
+  
         stage("install"){
             steps{
                 echo "Start build"
