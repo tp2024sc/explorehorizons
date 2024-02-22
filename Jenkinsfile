@@ -35,12 +35,11 @@ pipeline{
             steps {
                 withSonarQubeEnv('localQube') {
                     // Optionally use a Maven environment you've configured already
-                        bat "mvn sonar:sonar -Dsonar.projectKey=jenkinsPipeline -Dsonar.projectName=ExploreHorizons2"
+                        bat "mvn sonar:sonar -Dsonar.projectKey=jenkinsPipeline -Dsonar.projectName=ExploreHorizons2 -Dsonar.test=src/test -Dsonar.junit.reportsPath=target/surefire-reports -Dsonar.surefire.reportsPath=target/surefire-reports -Dsonar.jacoco.reportPath=target/jacoco.exec -Dsonar.java.binaries=target/classes -Dsonar.java.coveragePlugin=jacoco"
 
                 }
             }
         }
-  
         stage("install"){
             steps{
                 echo "Start build"
