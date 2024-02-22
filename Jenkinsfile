@@ -24,10 +24,20 @@ pipeline{
                 bat "mvn test"
             }
         }
-        stage("sonar"){
-            steps{
-                echo "Start sonar"
-                bat "mvn sonar:sonar -Dsonar.projectKey=jenkinsPipeline -Dsonar.projectName=ExploreHorizons2"
+        //stage("sonar"){
+        //    steps{
+        //        echo "Start sonar"
+        //        bat "mvn sonar:sonar -Dsonar.projectKey=jenkinsPipeline -Dsonar.projectName=ExploreHorizons2"
+        //    }
+        //}
+        
+        stage('build && SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('localQube') {
+                    // Optionally use a Maven environment you've configured already
+                        bat "mvn sonar:sonar -Dsonar.projectKey=jenkinsPipeline -Dsonar.projectName=ExploreHorizons2"
+
+                }
             }
         }
   
