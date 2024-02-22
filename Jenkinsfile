@@ -28,11 +28,11 @@ pipeline{
                 echo "Start build"
                 bat "mvn install -DskipTests"
             }
-        }
-        post {
+        }  
+    }
+    post {
             always {
                 echo 'I will always execute this!'
             }
         }
-    }
 }
