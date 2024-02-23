@@ -1,8 +1,8 @@
 pipeline{
     agent any
     environment { 
-        cargo.remote.username 'tomcat'
-        cargo.remote.password 'password'
+        cargo.remote.username = 'tomcat'
+        cargo.remote.password = 'password'
     }
     tools {
         maven 'Maven 395'
