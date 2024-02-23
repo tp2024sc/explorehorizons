@@ -1,8 +1,7 @@
 pipeline{
     agent any
     environment { 
-        cargo.remote.username = 'tomcat'
-        cargo.remote.password = 'password'
+      TOMCAT_CREDENTIALS = credentials('tomcat')
     }
     tools {
         maven 'Maven 395'
@@ -52,7 +51,7 @@ pipeline{
         }
         stage("deploy") {
             steps {
-               deploy adapters: [tomcat9(url: 'http://localhost:8090', credentialsId:'password')],
+               deploy adapters: [tomcat9(url: 'http://localhost:8090', credentialsId: 'tomcat' )],
                                 war:'**/*.war', contextPath: 'ExploreHorizons'
             }
         }
