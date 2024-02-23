@@ -48,8 +48,8 @@ pipeline{
         }
         stage("deploy") {
             steps {
-               deploy adapters: [tomcat9(url: 'http://localhost:8090/', credentialsId: 'tomcat/password')],
-                                war:'**/*.war',contextPath: 'ExploreHorizons'
+               deploy adapters: [tomcat9(url: 'http://localhost:8090', credentialsId: 'tomcat/password')],
+                                war:'**/*.war', contextPath: 'ExploreHorizons'
             }
         }
         
@@ -57,7 +57,7 @@ pipeline{
     post {
             always {
                 echo 'I will always execute this!'
-                //build job: "childJob", wait: true
+                
             }
         }
 }
