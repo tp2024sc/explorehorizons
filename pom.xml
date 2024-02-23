@@ -98,6 +98,14 @@
 				<groupId>${jacoco.groupId}</groupId>
 				<artifactId>${jacoco.artifactId}</artifactId>
 				<version>${jacoco.version}</version>
+				<configuration>
+					<excludes>
+            			<exclude>com/explorehorizons/*Servlet*.class</exclude>
+            			<exclude>com/explorehorizons/*Servlet*.java</exclude>
+            			<exclude>com/explorehorizons/*Servlet.class</exclude>
+            			<exclude>**/config/*</exclude>
+        			</excludes>
+				</configuration>
 				<executions>
 					<execution>
 						<id>default-prepare-agent</id>
