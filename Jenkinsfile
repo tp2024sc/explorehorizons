@@ -1,5 +1,9 @@
 pipeline{
     agent any
+    environment { 
+        cargo.remote.username 'tomcat'
+        cargo.remote.password 'password'
+    }
     tools {
         maven 'Maven 395'
         jdk 'OpenJK11'
