@@ -48,7 +48,7 @@ pipeline{
         }
         stage("deploy") {
             steps {
-               deploy adapters: [tomcat9(url: 'http://localhost:8090/', credentialsId: 'tomcat')],
+               deploy adapters: [tomcat9(url: 'http://localhost:8090/', credentialsId: 'tomcat/password')],
                                 war:'**/*.war',contextPath: 'ExploreHorizons'
             }
         }
