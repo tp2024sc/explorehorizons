@@ -16,7 +16,7 @@
 		<!-- jacoco properties -->
 		<jacoco.groupId>org.jacoco</jacoco.groupId>
 		<jacoco.artifactId>jacoco-maven-plugin</jacoco.artifactId>
-		<jacoco.version>0.8.7</jacoco.version>
+		<jacoco.version>0.8.11</jacoco.version>
 		<!-- SonarQube properties -->
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
@@ -100,13 +100,13 @@
 				<version>${jacoco.version}</version>
 				<executions>
 					<execution>
-						<id>prepare-agent</id>
+						<id>default-prepare-agent</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
 					<execution>
-						<id>report</id>
+						<id>default-report</id>
 						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
