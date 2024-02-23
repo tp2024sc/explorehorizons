@@ -1,8 +1,8 @@
 pipeline{
     agent any
-    environment { 
-      TOMCAT_CREDENTIALS = credentials('tomcat')
-    }
+    //environment { 
+     // TOMCAT_CREDENTIALS = credentials('tomcat')
+    //}
     tools {
         maven 'Maven 395'
         jdk 'OpenJK11'
