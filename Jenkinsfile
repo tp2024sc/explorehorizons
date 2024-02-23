@@ -45,11 +45,19 @@ pipeline{
                 echo "Start build"
                 bat "mvn install -DskipTests"
             }
-        }  
+        }
+        stage("deploy") {
+            steps {
+               deploy adapters: [tomcat9(url: 'http://localhost:8090/', credentialsId: 'tomcat')],
+                                war:'**/*.war',contextPath: 'ExploreHorizons'
+            }
+        }
+        
     }
     post {
             always {
                 echo 'I will always execute this!'
+                //build job: "childJob", wait: true
             }
         }
 }
