@@ -189,7 +189,7 @@
               </ul>
               <p>
                 Established in 1934, we have plenty of experience in organising trips!
-              	We love making travellers happy with our tours 222! 
+              	We love making travellers happy with our tours [test pipeline version]! 
               </p>
             </div>
           </div>
