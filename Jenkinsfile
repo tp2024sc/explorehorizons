@@ -1,8 +1,5 @@
 pipeline{
     agent any
-    //environment { 
-     // TOMCAT_CREDENTIALS = credentials('tomcat')
-    //}
     tools {
         maven 'Maven 395'
         jdk 'OpenJK11'
@@ -15,25 +12,7 @@ pipeline{
             }
         }
         
-        //stage("compile"){
-        //    steps{
-        //        echo "Start compile"
-        //        bat "mvn compile"
-        //    }
-        //}
-        //stage("test"){
-        //    steps{
-        //        echo "Start Test"
-        //        bat "mvn test"
-        //    }
-        //}
-        //stage("sonar"){
-        //    steps{
-        //        echo "Start sonar"
-        //        bat "mvn sonar:sonar -Dsonar.projectKey=jenkinsPipeline -Dsonar.projectName=ExploreHorizons2"
-        //    }
-        //}
-        
+
         stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('localQube') {
@@ -59,7 +38,7 @@ pipeline{
     }
     post {
             always {
-                echo 'I will always execute this!'
+                echo 'Building Selenium job to test deployed app!'
                 build job: "selenium-horizons", wait: true
             }
         }
